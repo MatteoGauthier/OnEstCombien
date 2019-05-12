@@ -1,36 +1,134 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TwitchLiveViewer</title>
+    <script src="http://github.hubspot.com/odometer/odometer.js"></script>
+    <link rel="stylesheet" href="http://github.hubspot.com/odometer/themes/odometer-theme-default.css" />
 </head>
+
 <body>
-    <span id="viewers"></span> viewers
-<script>
-var ve = document.getElementById('viewers');
-setInterval(_ => {
+    <div id="first">
+        <span id="viewers" class="odometer"></span> viewers
+    </div>
 
-    fetch("https://api.twitch.tv/kraken/streams/jaynim", {
-        "credentials": "omit",
-        "headers": {
-            "accept": "application/vnd.twitchtv.v3+json",
-            "client-id": "jzkbprff40iqj646a697cyrvl0zt2m6",
-            "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-            "x-device-id": "ce785a7487bcee5f"
-        },
-        "referrer": "https://www.twitch.tv/jaynim",
-        "referrerPolicy": "no-referrer-when-downgrade",
-        "body": null,
-        "method": "GET",
-        "mode": "cors"
-    }).then(response => response.json()).then(data => {
-        console.log(data);
-        ve.textContent = data.stream.viewers;
-    });
-}, 100000);
+    <div id="second">
+        <span id="TotalViews" class="odometer"></span> Vue en tout
+    </div>
+    <input type="text" placeholder="username" onkeyup="search()">
 
-</script>
+    <script>
+
+        var odo = document.querySelector('.odometer');
+        var ve = document.getElementById('viewers');
+        var tv = document.getElementById('TotalViews');
+        
+        function search() {
+            if (event.key === 'Enter') {
+                getStats();
+            }
+        }
+
+
+
+        function getStats(userId) {
+            
+
+            fetch("https://api.twitch.tv/helix/users?login=beeoneoff", {
+                "credentials": "omit",
+                "headers": {
+                    "accept": "application/vnd.twitchtv.v3+json",
+                    "client-id": "6mrxy6lqs4m9svcim8ssr44ypzvk1c",
+                    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                    "x-device-id": "ce785a7487bcee5f"
+                },
+                "referrer": "https://www.twitch.tv/jaynim",
+                "referrerPolicy": "no-referrer-when-downgrade",
+                "body": null,
+                "method": "GET",
+                "mode": "cors"
+            }).then(response => response.json()).then(data => {
+                
+                console.log(data.data[0].id);
+                userId = data.data[0].id;
+
+            });
+            setInterval(_ => {
+            fetch(`"https://api.twitch.tv/helix/users/id?=" + userId` , {
+                "credentials": "omit",
+                "headers": {
+                    "accept": "application/vnd.twitchtv.v3+json",
+                    "client-id": "jzkbprff40iqj646a697cyrvl0zt2m6",
+                    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                    "x-device-id": "ce785a7487bcee5f"
+                },
+                "referrer": "https://www.twitch.tv/jaynim",
+                "referrerPolicy": "no-referrer-when-downgrade",
+                "body": null,
+                "method": "GET",
+                "mode": "cors"
+            }).then(response => response.json()).then(data => {
+                console.log(data);
+                if (!data) {
+                    // handle empty response
+                    console.log("error")
+
+                } else if (data.error) {
+                    // handle error
+                    console.log("error")
+                    console.log(data.error)
+                } else {
+                    // process results
+                    console.log("good");
+                    //ve.textContent = data.stream.viewers;
+                    //tv.textContent = data.stream.channel.views;
+                    console.log(data.data[0].view_count);
+                }
+
+            });
+        }, 10000);
+//            fetch("https://api.twitch.tv/kraken/streams/beeoneoff", {
+//                "credentials": "omit",
+//                "headers": {
+//                    "accept": "application/vnd.twitchtv.v3+json",
+//                    "client-id": "jzkbprff40iqj646a697cyrvl0zt2m6",
+//                    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+//                    "x-device-id": "ce785a7487bcee5f"
+//                },
+//                "referrer": "https://www.twitch.tv/jaynim",
+//                "referrerPolicy": "no-referrer-when-downgrade",
+//                "body": null,
+//                "method": "GET",
+//                "mode": "cors"
+//            }).then(response => response.json()).then(data => {
+//                console.log(data);
+//                if (!data) {
+//                    // handle empty response
+//                    console.log("error")
+//
+//                } else if (data.error) {
+//                    // handle error
+//                    console.log("error")
+//                    console.log(data.error)
+//                } else {
+//                    // process results
+//                    console.log("good");
+//                    //ve.textContent = data.stream.viewers;
+//                    tv.textContent = data.stream.channel.views;
+//                }
+//
+//            });
+            };
+        
+    </script>
+    <style>
+        .odometer {
+            font-size: 40px;
+        }
+    </style>
 </body>
+
 </html>

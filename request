@@ -1,3 +1,4 @@
 curl -H 'Accept: application/vnd.twitchtv.v5+json' \
 -H 'Client-ID: 6mrxy6lqs4m9svcim8ssr44ypzvk1c' \
--X GET 'https://api.twitch.tv/kraken/streams/zerator'
+-X GET 'https://api.twitch.tv/helix/streams/?channel=BeeOneoff'
+
