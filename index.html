@@ -18,112 +18,12 @@
     <div id="second">
         <span id="TotalViews" class="odometer"></span> Vue en tout
     </div>
-    <input type="text" placeholder="username" onkeyup="search()">
-
-    <script>
-
-        var odo = document.querySelector('.odometer');
-        var ve = document.getElementById('viewers');
-        var tv = document.getElementById('TotalViews');
-        
-        function search() {
-            if (event.key === 'Enter') {
-                getStats();
-            }
-        }
 
 
+    <input id="inputUserName" type="text" value="gotaga" onkeypress="handleEnter(event)">
 
-        function getStats(userId) {
-            
 
-            fetch("https://api.twitch.tv/helix/users?login=beeoneoff", {
-                "credentials": "omit",
-                "headers": {
-                    "accept": "application/vnd.twitchtv.v3+json",
-                    "client-id": "6mrxy6lqs4m9svcim8ssr44ypzvk1c",
-                    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-                    "x-device-id": "ce785a7487bcee5f"
-                },
-                "referrer": "https://www.twitch.tv/jaynim",
-                "referrerPolicy": "no-referrer-when-downgrade",
-                "body": null,
-                "method": "GET",
-                "mode": "cors"
-            }).then(response => response.json()).then(data => {
-                
-                console.log(data.data[0].id);
-                userId = data.data[0].id;
-
-            });
-            setInterval(_ => {
-            fetch(`"https://api.twitch.tv/helix/users/id?=" + userId` , {
-                "credentials": "omit",
-                "headers": {
-                    "accept": "application/vnd.twitchtv.v3+json",
-                    "client-id": "jzkbprff40iqj646a697cyrvl0zt2m6",
-                    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-                    "x-device-id": "ce785a7487bcee5f"
-                },
-                "referrer": "https://www.twitch.tv/jaynim",
-                "referrerPolicy": "no-referrer-when-downgrade",
-                "body": null,
-                "method": "GET",
-                "mode": "cors"
-            }).then(response => response.json()).then(data => {
-                console.log(data);
-                if (!data) {
-                    // handle empty response
-                    console.log("error")
-
-                } else if (data.error) {
-                    // handle error
-                    console.log("error")
-                    console.log(data.error)
-                } else {
-                    // process results
-                    console.log("good");
-                    //ve.textContent = data.stream.viewers;
-                    //tv.textContent = data.stream.channel.views;
-                    console.log(data.data[0].view_count);
-                }
-
-            });
-        }, 10000);
-//            fetch("https://api.twitch.tv/kraken/streams/beeoneoff", {
-//                "credentials": "omit",
-//                "headers": {
-//                    "accept": "application/vnd.twitchtv.v3+json",
-//                    "client-id": "jzkbprff40iqj646a697cyrvl0zt2m6",
-//                    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-//                    "x-device-id": "ce785a7487bcee5f"
-//                },
-//                "referrer": "https://www.twitch.tv/jaynim",
-//                "referrerPolicy": "no-referrer-when-downgrade",
-//                "body": null,
-//                "method": "GET",
-//                "mode": "cors"
-//            }).then(response => response.json()).then(data => {
-//                console.log(data);
-//                if (!data) {
-//                    // handle empty response
-//                    console.log("error")
-//
-//                } else if (data.error) {
-//                    // handle error
-//                    console.log("error")
-//                    console.log(data.error)
-//                } else {
-//                    // process results
-//                    console.log("good");
-//                    //ve.textContent = data.stream.viewers;
-//                    tv.textContent = data.stream.channel.views;
-//                }
-//
-//            });
-            };
-        
-    </script>
+    <script src="damn.js"></script>
     <style>
         .odometer {
             font-size: 40px;
