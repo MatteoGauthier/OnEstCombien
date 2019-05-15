@@ -1,0 +1,12 @@
+.circle-status {
+    width: 20px;
+    height: 20px;
+    background-color: grey;
+    border-radius: 50px;
+}
+#status {
+    display: inline-block;
+}
+.odometer {
+    font-size: 40px;
+}

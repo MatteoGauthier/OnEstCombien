@@ -1,3 +1,5 @@
 {
-    "workbench.colorTheme": "One Monokai"
+    "workbench.colorTheme": "One Monokai",
+    "python.linting.enabled": false,
+    "eslint.enable": false
 }
