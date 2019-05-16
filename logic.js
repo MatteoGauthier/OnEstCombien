@@ -2,6 +2,7 @@ var odo = document.querySelector(".odometer");
 var ve = document.getElementById("viewers");
 var tv = document.getElementById("TotalViews");
 var input = document.querySelector("#inputUserName");
+var statusCircle = document.querySelector(".circle-status");
 var refreshV;
 var refreshT;
 
@@ -45,14 +46,17 @@ function main(userName) {
                 console.log(data);
 
                 if (data.data[0] === undefined) {
+                    statusCircle.classList.remove("StatusOnline");
                     console.log("Stream Offline");
-                    
+                    statusCircle.style.backgroundColor = "grey";
                     streamViewers(x, totalViews);
                 } else {
+
+                    statusCircle.classList.add("StatusOnline");
                     console.log("Stream Online");
                     console.log(
                         userName + " stream avec " + data.data[0].viewer_count + " viewers"
-                    );
+                        );
 
                     var totalViews = data.data[0].viewer_count;
                     streamViewers(x, totalViews);

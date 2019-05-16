@@ -1,12 +1,65 @@
 .circle-status {
-    width: 20px;
-    height: 20px;
-    background-color: grey;
-    border-radius: 50px;
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+  border-radius: 50px;
+  transition: all 1000ms;
 }
+
+.StatusOnline {
+    animation: StatusOnline 6600ms linear 2s 3;
+    background-color: #e80000;;
+}
+
+@keyframes StatusOnline {
+  10% {
+    background-color: #e80000;
+  }
+  10% {
+    background-color: transparent;
+  }
+
+  20% {
+    background-color: #e80000;
+  }
+
+  30% {
+    background-color: transparent;
+  }
+
+  40% {
+    background-color: #e80000;
+  }
+
+  50% {
+    background-color: transparent;
+  }
+
+  60% {
+    background-color: #e80000;
+  }
+
+  70% {
+    background-color: transparent;
+  }
+
+  80% {
+    background-color: #e80000;
+  }
+
+  90% {
+    background-color: transparent;
+  }
+
+  100% {
+    background-color: #e80000;
+  }
+}
+
 #status {
-    display: inline-block;
+  display: inline-block;
 }
+
 .odometer {
-    font-size: 40px;
+  font-size: 40px;
 }
