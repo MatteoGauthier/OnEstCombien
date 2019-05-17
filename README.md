@@ -7,6 +7,8 @@ Le projet est en cours de développement, n'hésitez pas à contibuer au projet 
 
 - [x] Nombre de viewers en direct
 - [x] Nombre de vues total pour l'utilisateur
+- [ ] Add Background Animation
+- [ ] Support mobile devices
 
 # Dev Utils
 
