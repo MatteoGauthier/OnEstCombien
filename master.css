@@ -1,14 +1,220 @@
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(119.36deg, #050505 0%, #200000 100%);
+  overflow: hidden;
+  color: white;
+  font-family: Inter, "Inter", "Helvetica", "Arial", sans-serif;
+}
+
+.result {
+  margin: 50px auto;
+}
+
+.result .numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  margin: 63px auto;
+}
+
+.result * {
+  font-family: Inter, "Inter", "Helvetica", "Arial", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.result .profile {
+  margin: 40px auto;
+}
+
+.aka {
+  font-size: 18px;
+  line-height: 9px;
+  letter-spacing: -0.025em;
+  color: rgba(255, 255, 255, 0.44);
+}
+
+.profile-pics {
+  margin: 0 12px;
+}
+
+#UserName-String {
+  font-size: 42px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.result > .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100px;
+  margin: 47px auto;
+  margin-bottom: 68px;
+}
+
+.main {
+  max-width: 838px;
+  margin: 0 auto;
+}
+
+#logo {
+  width: 950px;
+}
+
+.container {
+  margin: 8% 5%;
+}
+
+.inputs span {
+  font-family: "Montserrat", Montserrat, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.searchBar {
+  border: #fff 1px;
+  border-radius: 4px;
+  position: relative;
+  display: inline;
+}
+
+.searchBar #inputUserName {
+  width: calc(100% - 46px);
+  height: 40px;
+  background: transparent;
+  color: white;
+  border: 1px solid transparent;
+  padding-left: 12px;
+  font-size: 26px;
+}
+
+.searchBar #inputUserName {
+  color: white;
+  border-bottom-color: rgba(61, 239, 255, 0.2);
+}
+
+.searchBar #inputUserName:focus {
+  outline: none;
+}
+
+.searchBar #inputUserName::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.searchBar #inputUserName:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.searchBar #inputUserName::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.searchBar #inputUserName::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.searchBar #bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #3cefff;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.searchBar #inputUserName:focus ~ #bar {
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.searchBar svg {
+  z-index: 2;
+  float: right;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .circle-status {
   width: 20px;
   height: 20px;
   background-color: grey;
   border-radius: 50px;
+  -webkit-transition: all 1000ms;
   transition: all 1000ms;
+  margin-left: 12px;
 }
 
 .StatusOnline {
-    animation: StatusOnline 6600ms linear 2s 3;
-    background-color: #e80000;;
+  -webkit-animation: StatusOnline 6600ms linear 2s 3;
+          animation: StatusOnline 6600ms linear 2s 3;
+  background-color: #e80000;
+}
+
+@-webkit-keyframes StatusOnline {
+  10% {
+    background-color: #e80000;
+  }
+  10% {
+    background-color: transparent;
+  }
+  20% {
+    background-color: #e80000;
+  }
+  30% {
+    background-color: transparent;
+  }
+  40% {
+    background-color: #e80000;
+  }
+  50% {
+    background-color: transparent;
+  }
+  60% {
+    background-color: #e80000;
+  }
+  70% {
+    background-color: transparent;
+  }
+  80% {
+    background-color: #e80000;
+  }
+  90% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #e80000;
+  }
 }
 
 @keyframes StatusOnline {
@@ -18,39 +224,30 @@
   10% {
     background-color: transparent;
   }
-
   20% {
     background-color: #e80000;
   }
-
   30% {
     background-color: transparent;
   }
-
   40% {
     background-color: #e80000;
   }
-
   50% {
     background-color: transparent;
   }
-
   60% {
     background-color: #e80000;
   }
-
   70% {
     background-color: transparent;
   }
-
   80% {
     background-color: #e80000;
   }
-
   90% {
     background-color: transparent;
   }
-
   100% {
     background-color: #e80000;
   }
@@ -63,3 +260,37 @@
 .odometer {
   font-size: 40px;
 }
+
+@media (max-width: 981px) {
+  body {
+    opacity: 1;
+  }
+  #logo {
+    width: 90vw;
+  }
+  .hero {
+    margin: 0;
+    margin-bottom: 20px;
+    height: 100%;
+  }
+  .container {
+    margin: 4% 5%;
+  }
+  .searchBar #inputUserName {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+  .searchBar svg {
+    margin: 6px;
+  }
+  .inputs span {
+    font-size: 16px;
+  }
+  .result {
+    margin: 20px auto;
+  }
+  .result .profile {
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=master.css.map */

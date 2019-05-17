@@ -1,10 +1,15 @@
 var odo = document.querySelector(".odometer");
+var allOdo = document.querySelectorAll(".odometer");
 var ve = document.getElementById("viewers");
 var tv = document.getElementById("TotalViews");
 var input = document.querySelector("#inputUserName");
 var statusCircle = document.querySelector(".circle-status");
 var refreshV;
 var refreshT;
+
+console.log(allOdo);
+allOdo[0].textContent = 100000;
+allOdo[1].textContent = 100000;
 
 function handleEnter(e) {
     var keycode = e.keyCode ? e.keyCode : e.which;

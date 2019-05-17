@@ -8,24 +8,76 @@
     <title>TwitchLiveViewer</title>
     <script src="http://github.hubspot.com/odometer/odometer.js"></script>
     <link rel="stylesheet" href="http://github.hubspot.com/odometer/themes/odometer-theme-default.css" />
+    <link rel="stylesheet" href="https://semoule.fr/res/reset.css">
     <link rel="stylesheet" href="master.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+        rel="stylesheet" />
 </head>
 
 <body>
-    <div id="first">
-        <span id="viewers" class="odometer"></span> viewers
-    </div>
+    <section>
 
-    <div id="second">
-        <span id="TotalViews" class="odometer"></span> Vue en tout
-    </div>
+        <div class="container">
+            <div class="hero">
+                <div class="logo">
+                    <img id="logo" src="res/Logo Twitch Live Viewer.svg" alt="Logo Twitch Live Viewer">
+                </div>
+            </div>
+
+            <div class="main">
+
+                <div class="inputs">
+                    <span>Enter below the name of the Streamers you want to know</span>
+                    <div class="searchBar">
+                        <input id="inputUserName" type="text" placeholder="ex. Ninja, BeeOneoff, LeStream"
+                            onkeypress="handleEnter(event)">
+                        <span id="bar"></span>
+                        <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M25.695 24.2293L18.4638 16.9322C19.8789 15.1587 20.732 12.9114 20.732 10.4678C20.732 4.7479 16.0941 0.111084 10.366 0.111084C4.63796 0.111084 0 4.75467 0 10.4745C0 16.1944 4.63796 20.8312 10.366 20.8312C12.8441 20.8312 15.1123 19.9648 16.8998 18.5162L24.0836 25.7659C24.3002 25.996 24.5981 26.1111 24.8893 26.1111C25.1669 26.1111 25.4445 26.0096 25.6544 25.8065C26.1012 25.38 26.1148 24.676 25.695 24.2293ZM10.366 18.6042C8.19261 18.6042 6.14784 17.7581 4.61088 16.2215C3.07392 14.6849 2.22758 12.6406 2.22758 10.4745C2.22758 8.30166 3.07392 6.2574 4.61088 4.72759C6.14784 3.19101 8.19261 2.34488 10.366 2.34488C12.5394 2.34488 14.5842 3.19101 16.1212 4.72759C17.6581 6.26417 18.5045 8.30843 18.5045 10.4745C18.5045 12.6474 17.6581 14.6917 16.1212 16.2215C14.5842 17.7581 12.5394 18.6042 10.366 18.6042Z"
+                                fill="white" />
+                        </svg>
+
+                    </div>
+                </div>
+                <div class="result">
+                    <div class="profile">
+                        <div class="profile-pics">
+                            <img src="res/userPlaceHolder.svg" alt="User Profile Pics">
+                        </div>
+                        <div class="UserName">
+                            <div id="UserName-String">FortniteProPlayer</div>
+                            <div class="aka">
+                                aka.TheFrenchMonster
+                            </div>
+                        </div>
+                        <div id="status">
+                            <div class="circle-status"></div>
+                        </div>
+                    </div>
+                    <div class="numbers">
+                        <div id="first">
+                            <span id="viewers" class="odometer"></span>
+                            <p>Viewers</p>
+                        </div>
+
+                        <div id="second">
+                            <span id="TotalViews" class="odometer"></span>
+                            <p>Total Viewers</p>
+                        </div>
+                    </div>
 
 
-    <input id="inputUserName" type="text" value="gotaga" onkeypress="handleEnter(event)">
 
-    <div id="status">
-        <div class="circle-status"></div>
-    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+
 
     <script src="logic.js"></script>
 
