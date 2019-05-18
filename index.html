@@ -17,14 +17,26 @@
     <meta name="theme-color" content="#ffffff">
     <!-- End -->
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125389774-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-125389774-1');
+    </script>
+
+
     <title>TwitchLiveViewer - Semoule.fr</title>
     <script src="http://github.hubspot.com/odometer/odometer.js"></script>
     <link rel="stylesheet" href="http://github.hubspot.com/odometer/themes/odometer-theme-default.css" />
     <link rel="stylesheet" href="https://semoule.fr/res/reset.css">
     <link rel="stylesheet" href="master.css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Montserrat300,300italic,500,500italic"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat300,300italic,500,500italic" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/gh/polonel/SnackBar/dist/snackbar.min.js"></script>
     <link rel="stylesheet" type="text/css" href="res/snackbar.css" />
 </head>
@@ -52,8 +64,7 @@
                         <img class="chevron-D" src="res/_ionicons_svg_ios-arrow-down.svg" alt="">
                     </div>
                     <div class="searchBar">
-                        <input role="searchbox" aria-label="search Streamer with this input" name="searchStreamer" spellcheck="false" id="inputUserName" type="text"
-                            placeholder="ex. Ninja, BeeOneoff, LeStream" onkeypress="handleEnter(event)">
+                        <input role="searchbox" aria-label="search Streamer with this input" name="searchStreamer" spellcheck="false" id="inputUserName" type="text" placeholder="ex. Ninja, BeeOneoff, LeStream" onkeypress="handleEnter(event)">
                         <span id="bar"></span>
                         <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -125,7 +136,7 @@
     </footer>
     <div class="tempUnaivable">
         <div>
-                Twitch Live Viewer is not available on mobile devices 😣, but it will be soon...
+            Twitch Live Viewer is not available on mobile devices 😣, but it will be soon...
 
         </div>
     </div>
