@@ -4,6 +4,7 @@ var ve = document.getElementById("viewers");
 var tv = document.getElementById("TotalViews");
 var input = document.querySelector("#inputUserName");
 var statusCircle = document.querySelector(".circle-status");
+var resultPseudo = document.querySelector("#UserName-String:first-child");
 var refreshV;
 var refreshT;
 
@@ -35,6 +36,7 @@ function main(userName) {
                 console.log("Streamers inéxistant, vérifiez votre entrée");
             } else {
                 userId = data.data[0].id;
+                resultPseudo.textContent = data.data[0].display_name;
                 console.log("USERNAME TO ID = Id du streamer: " + userId);
                 streamStatus(userId);
             }

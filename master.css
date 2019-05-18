@@ -8,6 +8,19 @@ body {
   font-family: Inter, "Inter", "Helvetica", "Arial", sans-serif;
 }
 
+.desc {
+  text-align: center;
+  margin-bottom: 12px;
+  font-family: "Montserrat", Montserrat, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.desc * {
+  padding: 0 3px;
+}
+
 .result {
   margin: 50px auto;
 }
@@ -33,11 +46,20 @@ body {
   margin: 40px auto;
 }
 
+.UserName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
 .aka {
-  font-size: 18px;
-  line-height: 9px;
-  letter-spacing: -0.025em;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.44);
+  -webkit-transform: translateX(-29px);
+          transform: translateX(-29px);
 }
 
 .profile-pics {
@@ -82,13 +104,6 @@ body {
 
 .container {
   margin: 8% 5%;
-}
-
-.inputs span {
-  font-family: "Montserrat", Montserrat, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 24px;
 }
 
 .searchBar {
@@ -165,6 +180,12 @@ body {
   display: flex;
 }
 
+.stringStatus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .circle-status {
   width: 20px;
   height: 20px;
@@ -172,7 +193,9 @@ body {
   border-radius: 50px;
   -webkit-transition: all 1000ms;
   transition: all 1000ms;
-  margin-left: 12px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
 }
 
 .StatusOnline {
@@ -251,10 +274,6 @@ body {
   100% {
     background-color: #e80000;
   }
-}
-
-#status {
-  display: inline-block;
 }
 
 .odometer {
