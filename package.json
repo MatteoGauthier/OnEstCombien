@@ -1,0 +1,23 @@
+{
+  "name": "twitchliveviewer",
+  "version": "1.0.0",
+  "description": "Display the numbers of viewers live",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattixNow/OnEstCombien.git"
+  },
+  "author": "Mattèo Gauthier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MattixNow/OnEstCombien/issues"
+  },
+  "homepage": "https://github.com/MattixNow/OnEstCombien#readme",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
