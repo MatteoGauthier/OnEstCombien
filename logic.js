@@ -5,10 +5,12 @@ var tv = document.getElementById("TotalViews");
 var input = document.querySelector("#inputUserName");
 var statusCircle = document.querySelector(".circle-status");
 var resultPseudo = document.querySelector("#UserName-String:first-child");
+var resultAka = document.querySelector("div.aka > span");
+var resultPPics = document.querySelector("div.profile-pics > img");
+
 var refreshV;
 var refreshT;
 
-console.log(allOdo);
 allOdo[0].textContent = 100000;
 allOdo[1].textContent = 100000;
 
@@ -37,6 +39,8 @@ function main(userName) {
             } else {
                 userId = data.data[0].id;
                 resultPseudo.textContent = data.data[0].display_name;
+                resultAka.textContent = data.data[0].login;
+                resultPPics.src = data.data[0].profile_image_url;
                 console.log("USERNAME TO ID = Id du streamer: " + userId);
                 streamStatus(userId);
             }

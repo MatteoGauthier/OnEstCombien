@@ -1,5 +1,8 @@
+// Root Defintions
+
 $font-stack: (Inter, "Inter", "Helvetica", "Arial", sans-serif);
 $desktop: "(max-width:981px)";
+
 @mixin lightText {
   font-family: "Montserrat", Montserrat, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu,
     Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -9,69 +12,37 @@ $desktop: "(max-width:981px)";
 
 html,
 body {
+  color: white;
+  font-family: $font-stack;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.background {
+  overflow: hidden;
   height: 100vh;
   width: 100vw;
   background: linear-gradient(119.36deg, #050505 0%, #200000 100%);
-  overflow: hidden;
-  color: white;
-  font-family: $font-stack;
+  animation: 30s hueRotate alternate infinite;
+  z-index: -2;
+  position: absolute;
 }
 
-#chevron-D {
-
+.odometer {
+  font-size: 40px;
 }
 
-.desc {
-  text-align: center;
-  margin-bottom: 12px;
-  @include lightText;
-  font-size: 24px;
-  * {
-    padding: 0 3px;
-  }
-}
-.result {
-  margin: 50px auto;
-  .numbers {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    margin: 63px auto;
-  }
-    * {
-      font-family: $font-stack;
-      font-style: italic;
-      font-weight: 500;
-    }
-  
-  .profile {
-    margin: 40px auto;
-  }
-
-}
-.UserName {
-  display: flex;
-  align-items: baseline;
+.container {
+  margin: 8% 5%;
 }
 
-.aka {
-  font-size: 12px;
+.tempUnaivable {
+  display: none;
+}
 
-  color: rgba(255, 255, 255, 0.44);
-  transform: translateX(-29px);
-}
-.profile-pics {
-  margin: 0 12px;
-}
-#UserName-String {
-  font-size: 42px;
-  font-style: italic;
-  font-weight: 500;
-}
-.result > .profile {
-  display: flex;
-  justify-content: center;
-}
+// Hero :
+// - Logo
 
 .hero {
   display: flex;
@@ -81,23 +52,32 @@ body {
   margin-bottom: 68px;
 }
 
+#logo {
+  width: 950px;
+}
+
+// Main components
 .main {
   max-width: 838px;
   margin: 0 auto;
 }
 
-#logo {
-  width: 950px;
-}
+// Inputs
+// - Description
+// - Input with pretty effects
 
-.container {
-  margin: 8% 5%;
+.desc {
+  text-align: center;
+  margin-bottom: 12px;
+  @include lightText;
+  font-size: 24px;
+
+  * {
+    padding: 0 3px;
+  }
 }
 
 .searchBar {
-  border: #fff 1px;
-  border-radius: 4px;
-
   position: relative;
   display: inline;
 
@@ -105,14 +85,15 @@ body {
     width: calc(100% - 46px);
     height: 40px;
     background: transparent;
-    color: white;
     border: 1px solid transparent;
     padding-left: 12px;
     font-size: 26px;
   }
 
+  // coucou
+
   #inputUserName {
-    color: white;
+    color: hsla(0, 0%, 100%, 0.89);
     border-bottom-color: hsla(185, 100%, 62%, 0.2);
   }
 
@@ -121,7 +102,7 @@ body {
   }
 
   #inputUserName::placeholder {
-    color: hsla(0, 0%, 100%, 0.6);
+    color: hsla(0, 0%, 100%, 0.4);
   }
 
   #bar {
@@ -148,6 +129,63 @@ body {
   }
 }
 
+// Result
+// - Profile Status
+// - Counter
+
+.result {
+  margin: 50px auto;
+
+  .numbers {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 63px auto;
+  }
+
+  * {
+    font-family: $font-stack;
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .profile {
+    margin: 40px auto;
+  }
+}
+
+.UserName {
+  display: flex;
+  align-items: baseline;
+}
+
+.aka {
+  font-size: 12px;
+
+  color: rgba(255, 255, 255, 0.44);
+  transform: translateX(-29px);
+}
+
+.profile-pics {
+  margin: 0 12px;
+}
+
+#UserName-String {
+  font-size: 42px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.result > .profile {
+  display: flex;
+  justify-content: center;
+}
+
+#profile-pics {
+  height: 50px;
+  border-radius: 14px;
+}
+
 .stringStatus {
   display: flex;
 }
@@ -161,12 +199,74 @@ body {
   display: inline-block;
   vertical-align: top;
   margin-left: 10px;
-
 }
 
 .StatusOnline {
   animation: StatusOnline 6600ms linear 2s 3;
   background-color: #e80000;
+}
+
+// Footer
+
+#heart-icon {
+  opacity: 1;
+}
+
+footer {
+  display: block;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  padding: 5px;
+
+  .Fflex {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a {
+    color: inherit;
+    background: none;
+    text-decoration: none;
+  }
+
+  .Fleft {
+    float: left;
+
+    a {
+      color: #90e4ff;
+    }
+
+    align-self: flex-end;
+  }
+
+  .Fright {
+    text-align: right;
+    float: right;
+    color: rgba(255, 255, 255, 0.9);
+
+    a {
+      display: block;
+    }
+
+    svg {
+      fill: rgba(255, 255, 255, 0.9);
+      width: 20px;
+      vertical-align: bottom;
+    }
+  }
+}
+
+// Animations
+
+@keyframes hueRotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(360deg);
+  }
 }
 
 @keyframes StatusOnline {
@@ -215,35 +315,33 @@ body {
   }
 }
 
-.odometer {
-  font-size: 40px;
-}
+// Media queries
 
 @media #{$desktop} {
-
-  body{
-
+  body {
     opacity: 1;
   }
+
   #logo {
     width: 90vw;
   }
+
   .hero {
-    margin:0;
+    margin: 0;
     margin-bottom: 20px;
     height: 100%;
   }
 
   .container {
-    margin:4% 5%;
+    margin: 4% 5%;
   }
 
   .searchBar {
-
     #inputUserName {
       font-size: 18px;
       margin-top: 8px;
     }
+
     svg {
       margin: 6px;
     }
@@ -251,15 +349,31 @@ body {
 
   .inputs {
     span {
-
       font-size: 16px;
     }
   }
+
   .result {
     margin: 20px auto;
+
     .profile {
       margin: 0;
     }
   }
+}
 
+@media (orientation: portrait) {
+  main,
+  footer {
+    display: none;
+  }
+
+  .tempUnaivable {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    text-align: center;
+    padding: 10px;
+  }
 }
