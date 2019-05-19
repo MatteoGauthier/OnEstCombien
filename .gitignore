@@ -1,5 +1,4 @@
 test-stackoverflow/
 node_modules/
 .vscode/
-.vscode
 now.json
