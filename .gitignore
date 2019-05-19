@@ -1,3 +1,4 @@
 test-stackoverflow/
 node_modules/
-.vscode/tasks.json
+.vscode/
+now.json
