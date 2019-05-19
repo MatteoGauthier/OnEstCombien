@@ -202,7 +202,7 @@ body {
 }
 
 .StatusOnline {
-  animation: StatusOnline 6600ms linear 2s 3;
+  animation: StatusOnline 6600ms linear 2s 3 forwards;
   background-color: #e80000;
 }
 
