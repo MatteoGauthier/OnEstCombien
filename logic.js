@@ -105,7 +105,7 @@ function main(userName) {
         fetchTViewers();
         refreshT = setInterval(() => {
             fetchTViewers();
-        }, 30000);
+        }, 60000);
 
         function fetchTViewers() {
             fetch(`https://api.twitch.tv/helix/users?id=${d}`, {
