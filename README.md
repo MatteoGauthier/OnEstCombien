@@ -10,6 +10,8 @@ Le projet est en cours de développement, n'hésitez pas à contibuer au projet 
 - [x] Add Background Animation
 - [ ] Support mobile devices
 - [ ] Find a proper way to fetch stream and user status #1
+- [ ] Add more user info
+- [ ] Node.js powered
 
 # Dev Utils
 
