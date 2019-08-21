@@ -369,9 +369,51 @@ footer {
 @media (orientation: portrait) {
   main,
   footer {
-    display: none;
+    display: initial;
   }
-
+  #UserName-String {
+    font-size: 32px;
+  }
+  .container {
+    margin: 4% 2%;
+  }.circle-status{
+    width: 10px;
+    height: 10px;
+  }.aka{
+    transform: none;
+  }
+.circle-status {
+  margin-left: 5px;
+}.searchBar {
+  #bar {
+    bottom: -11px;
+  }
+}
+.result { .numbers{margin: 38px auto;}   margin: 32px auto;}
+  .UserName {
+    display: block;
+    -webkit-box-align: none;
+    
+    align-items: unset
+  }
+  #profile-pics {
+    height: 44px;}
+  .chevron-D {
+    width: 32px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  .desc {
+    font-size: inherit
+  }
+  div.desc > img:nth-child(1) {
+    display: none;
+    padding: o;
+  }
+  .desc * {
+    padding: 0
+  }
   .tempUnaivable {
     display: grid;
     justify-content: center;
