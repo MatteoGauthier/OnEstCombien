@@ -13,6 +13,7 @@ Le projet est en cours de développement, n'hésitez pas à contibuer au projet 
 - [ ] Add more user info
 - [ ] Node.js powered
 - [ ] Auth Token (OAuth, client-side or server-side?)
+- [ ] Improve mobile version (on keyboard show issue)
 
 # Dev Utils
 
