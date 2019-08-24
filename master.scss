@@ -423,3 +423,9 @@ footer {
     padding: 10px;
   }
 }
+
+@media (max-height:500px) {
+  footer, .result {
+    display: none;
+  }
+}
