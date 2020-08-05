@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MattixNow/OnEstCombien.git"
+    "url": "git+https://github.com/MatteoGauthier/OnEstCombien.git"
   },
   "author": "Mattèo Gauthier",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MattixNow/OnEstCombien/issues"
+    "url": "https://github.com/MatteoGauthier/OnEstCombien/issues"
   },
-  "homepage": "https://github.com/MattixNow/OnEstCombien#readme",
+  "homepage": "https://github.com/MatteoGauthier/OnEstCombien#readme",
   "dependencies": {
     "live-server": "^1.2.1"
   }
